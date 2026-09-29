@@ -1,16 +1,17 @@
 <!doctype html> 
-<html lang="en"> 
+<html lang="zh-CN"> 
 	<head> 
 		<style type="text/css">
         	body {margin: 0;}
-			p {font-family: 'silkscreennormal'; src: url('assets/font/silkscreennormal.ttf'); format("truetype");}
+			p {font-family: 'silkscreennormal', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Source Han Sans SC', 'Hiragino Sans GB', sans-serif; src: url('assets/font/silkscreennormal.ttf'); format("truetype");}
     	</style>
 		
 		<link rel="stylesheet" href="./assets/fonts/stylesheet.css" type="text/css" charset="utf-8" />
 		
 	
 		<meta charset="UTF-8" />
-		<title>Rogue Fable III</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>盗贼寓言 III（中文版）</title>
 		
 	
 	</head>
@@ -26,6 +27,8 @@
 
 		<!-- Main: -->
 		<script src='./phaser.js'></script>
+		<!-- 中文渲染挂钩（必须在 phaser.js 之后加载） -->
+		<script src='./i18n-render.js'></script>
 		<script src='./lz-string.min.js'></script>
 		<script src='./constants.js'></script>
 		<script src='./loader.js'></script>

@@ -283,7 +283,8 @@ var MAX_STATUS_EFFECTS = 10;
 
 // FONTS:
 // ************************************************************************************************
-var FONT_NAME = 'silkscreennormal'; // Inconsolata, Monospace
+// silkscreen 只含拉丁字形，浏览器会自动回退到后面的中文字体。
+var FONT_NAME = 'silkscreennormal, "Microsoft YaHei", "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif';
 
 var SMALL_WHITE_FONT = {font: '14px ' + FONT_NAME, fill: '#ffffff'};
 var LARGE_WHITE_FONT = {font: '16px ' + FONT_NAME, fill: '#ffffff'};

@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+.vscode
+tools
+docs
+node_modules
+*.md
+!README.md
+.DS_Store
+Thumbs.db
+docker-compose.yml
