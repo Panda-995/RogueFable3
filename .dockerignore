@@ -2,18 +2,17 @@
 .git
 .github
 .gitignore
-.gitattributes
 .vscode
 tools
 docs
 node_modules
-README.md
 docker-compose.yml
 
-# 这些文件只是构建/部署用的，不该被 nginx 当静态资源公开
+# 这些文件只是构建用的，不该被 nginx 当静态资源公开
+# （docker/ 目录必须留在构建上下文里，Dockerfile 要从中取 nginx.conf，
+#   但会在 COPY 之后从 html 根目录删掉）
 Dockerfile
 .dockerignore
-docker
 
 # macOS / Windows 噪音
 .DS_Store
