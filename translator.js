@@ -771,6 +771,7 @@ var dic = {
 	'Ambush!': '伏击！',
 	'Running!': '逃跑！',
 	'Poisoned!': '中毒了！',
+	'Electricity': '电光',
 	'Crit -': '暴击 -',
 	'Blocked!': '格挡！',
 	'Reposte!': '招架！',

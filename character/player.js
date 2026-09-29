@@ -808,10 +808,10 @@ PlayerCharacter.prototype.jumpInPit = function (tileIndex) {
 	
 	// Setup Dialog:
 	dialog = [{}];
-	dialog[0].text = 'Really jump into the pit?';
+	dialog[0].text = '真的要跳进坑里吗？';
 	dialog[0].responses = [
-		{text: 'Yes', nextLine: 'exit', func: pitFunc},
-		{text: 'No', nextLine: 'exit'},
+		{text: '是', nextLine: 'exit', func: pitFunc},
+		{text: '否', nextLine: 'exit'},
 	];
 	
 	gs.dialogMenu.open(dialog);
