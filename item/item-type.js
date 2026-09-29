@@ -594,70 +594,70 @@ gs.createItemTypes = function () {
 gs.setItemDescriptions = function () {
 	
 	this.itemTypes.Meat.desc = "完全满足您的饥饿感。\n恢复一半的最大生命值和法力值。";
-	this.itemTypes.HealingShroom.desc = "Heals " + SHROOM_HP + " hit points. Will also cure poison.";
-	this.itemTypes.EnergyShroom.desc = "Restores " + SHROOM_EP + " mana points.";
-	this.itemTypes.PotionOfHealing.desc = "Completely restores your HP and cures physical effects. Will raise your max HP by 4 if used at full health.";
-	this.itemTypes.PotionOfEnergy.desc = "Completely restores your MP and cures mental effects. Will raise your max MP by 1 if used at full mana.";
-	this.itemTypes.PotionOfExperience.desc = "Temporarily increases your rate of experience.";
+	this.itemTypes.HealingShroom.desc = "恢复 " + SHROOM_HP + " 点生命值，同时解除中毒。";
+	this.itemTypes.EnergyShroom.desc = "恢复 " + SHROOM_EP + " 点法力值。";
+	this.itemTypes.PotionOfHealing.desc = "完全恢复生命值并解除物理层面的负面效果。若在满血时使用，最大生命值将永久提升 4 点。";
+	this.itemTypes.PotionOfEnergy.desc = "完全恢复法力值并解除精神层面的负面效果。若在满法力时使用，最大法力值将永久提升 1 点。";
+	this.itemTypes.PotionOfExperience.desc = "短时间内大幅提升获得经验的速度。";
 	//this.itemTypes.PotionOfSpeed.desc = "Temporarily increases your movement speed.";
-	this.itemTypes.PotionOfPower.desc = "Increases your melee, range and spell damage by 100% for 20 turns.";
-	this.itemTypes.PotionOfPower.desc = "Increases your melee, range and spell damage by 100% for 20 turns.";
-	this.itemTypes.PotionOfResistance.desc = "Completely restores your HP and cures physical effects. Increases your defense to all damage types for 50 turns.";
-	this.itemTypes.PotionOfLevitation.desc = "Allows you to levitate for 50 turns.";
-	this.itemTypes.PotionOfGainAttribute.desc = "Allows you to permenantly increase either strength, intelligence or dexterity";
+	this.itemTypes.PotionOfPower.desc = "20 回合内近战、远程与法术伤害提升 100%。";
+	this.itemTypes.PotionOfPower.desc = "20 回合内近战、远程与法术伤害提升 100%。";
+	this.itemTypes.PotionOfResistance.desc = "完全恢复生命值并解除物理层面的负面效果。50 回合内对所有伤害类型的防御力提升。";
+	this.itemTypes.PotionOfLevitation.desc = "50 回合内可悬浮，忽略地面地形。";
+	this.itemTypes.PotionOfGainAttribute.desc = "可永久提升力量、智力或敏捷其中一项";
 	
-	this.itemTypes.EnergyShroomTea.desc = "Regain 1MP every 5 turns for a total of 200 turns.";
-	this.itemTypes.RingOfTheVampire.desc = "Heals 1 hit point every time you hit an enemy with a melee weapon.";
-	this.itemTypes.RingOfFlight.desc = "Allows you to fly, avoiding all negative terrain effects.";
-	this.itemTypes.RingOfLifeSaving.desc = "Grants you a one time resurrection upon death. The ring will be consumed in the process.";
-	this.itemTypes.RingOfSpeed.desc = "Allows you to run at double normal movement speed.";
-	this.itemTypes.RingOfWealth.desc = "You will pick up double gold.";
-	this.itemTypes.InfernoRing.desc = "Burns anyone hitting you with melee.";
-	this.itemTypes.RingOfThunder.desc = "Shocks anyone hitting you with melee.";
+	this.itemTypes.EnergyShroomTea.desc = "每 5 回合恢复 1 点法力值，持续 200 回合。";
+	this.itemTypes.RingOfTheVampire.desc = "每次用近战武器击中敌人时恢复 1 点生命值。";
+	this.itemTypes.RingOfFlight.desc = "可飞越地形，免疫一切负面地形效果。";
+	this.itemTypes.RingOfLifeSaving.desc = "死亡时自动复活一次，代价是消耗这枚戒指。";
+	this.itemTypes.RingOfSpeed.desc = "移动速度提升至普通状态的两倍。";
+	this.itemTypes.RingOfWealth.desc = "拾取的金币数量翻倍。";
+	this.itemTypes.InfernoRing.desc = "近战攻击你的人会被灼烧。";
+	this.itemTypes.RingOfThunder.desc = "近战攻击你的人会被电击。";
 	
-	this.itemTypes.BootsOfFlight.desc = "Allows you to fly, avoiding all negative terrain effects.";
-	this.itemTypes.BootsOfSpeed.desc = "Allows you to run at double normal movement speed.";
+	this.itemTypes.BootsOfFlight.desc = "可飞越地形，免疫一切负面地形效果。";
+	this.itemTypes.BootsOfSpeed.desc = "移动速度提升至普通状态的两倍。";
 	
-	this.itemTypes.ScrollOfTeleportation.desc = "Immediately teleports you to a random location in the current level.";
-	this.itemTypes.ScrollOfBlink.desc = "Allows you to immediately teleport to any visible tile.";
-	this.itemTypes.ScrollOfFear.desc = "Fears all visible enemies, causing them to run away from you.";
-	this.itemTypes.ScrollOfEnchantment.desc = "Allows you to enchant a piece of equipment.";
-	this.itemTypes.ScrollOfAcquirement.desc = "Randomly summons an item. You can choose from weapons, armor, rings, scrolls, potions and food, but cannot select the exact item.";
-	this.itemTypes.ScrollOfHellFire.desc = "Engulfs all visible enemies in hell fire.";
-	this.itemTypes.ScrollOfDomination.desc = 'Allows you to permanently charm a creature, turning it to your side';
+	this.itemTypes.ScrollOfTeleportation.desc = "立即将你传送到当前层级的随机位置。";
+	this.itemTypes.ScrollOfBlink.desc = "可立即传送到任意可见的格子。";
+	this.itemTypes.ScrollOfFear.desc = "恐惧所有可见的敌人，使其逃离你身边。";
+	this.itemTypes.ScrollOfEnchantment.desc = "可对一件装备进行附魔。";
+	this.itemTypes.ScrollOfAcquirement.desc = "随机召唤一件物品。可选择武器、护甲、戒指、卷轴、药剂或食物类别，但无法指定具体物品。";
+	this.itemTypes.ScrollOfHellFire.desc = "用地狱火吞噬所有可见的敌人。";
+	this.itemTypes.ScrollOfDomination.desc = '可永久魅惑一个生物，使其倒向你这边';
 	
 	// WANDS:
-	this.itemTypes.WandOfBlades.desc = 'Summons a temporary swarm of spectral blades which will attack your enemies.';
+	this.itemTypes.WandOfBlades.desc = '召唤出一群幽影刃，它们会攻击你的敌人。';
 	
 	this.itemTypes.Key.desc = "允许您打开上锁的门";
     
-    this.itemTypes.Chakram.desc = "Hits multiple enemies in a line";
+    this.itemTypes.Chakram.desc = "可同时击中一条直线上的多个敌人";
 	
 	// CHARMS:
-	this.itemTypes.CharmOfClarity.desc = 'Increases the rate at which you regenerate mana.';
-	this.itemTypes.CharmOfRegeneration.desc = 'Increases the rate at which you regenerate hit points.';
+	this.itemTypes.CharmOfClarity.desc = '提升法力值的自然恢复速度。';
+	this.itemTypes.CharmOfRegeneration.desc = '提升生命值的自然恢复速度。';
 	
-	this.itemTypes.TwoHandSword.desc = 'A two handed weapon.';
-    this.itemTypes.Mace.desc = 'Has a 25% chance to knock enemies back.';
-	this.itemTypes.Rapier.desc = 'Will crit hit enemies when stepping towards them.';
-    this.itemTypes.WarHammer.desc = 'A two handed weapon. Has a 25% chance to knock enemies back.';
-	this.itemTypes.HandAxe.desc = 'Will cleave with every attack, hitting all adjacent enemies.';
-	this.itemTypes.BattleAxe.desc = 'A two handed weapon. Will cleave with every attack, hitting all adjacent enemies.';
-	this.itemTypes.BroadAxe.desc = 'Will cleave with every attack, hitting all adjacent enemies.';
-	this.itemTypes.Spear.desc = 'Has an extra long reach, allowing you to hit enemies two tiles away.';
-	this.itemTypes.Halberd.desc = 'A two handed weapon. Has an extra long reach, allowing you to hit enemies two tiles away.';
+	this.itemTypes.TwoHandSword.desc = '双手武器。';
+    this.itemTypes.Mace.desc = '有 25% 的几率将敌人击退。';
+	this.itemTypes.Rapier.desc = '向敌人靠近时会必定暴击。';
+    this.itemTypes.WarHammer.desc = '双手武器。有 25% 的几率将敌人击退。';
+	this.itemTypes.HandAxe.desc = '每次攻击都会横扫，命中所有相邻的敌人。';
+	this.itemTypes.BattleAxe.desc = '双手武器。每次攻击都会横扫，命中所有相邻的敌人。';
+	this.itemTypes.BroadAxe.desc = '每次攻击都会横扫，命中所有相邻的敌人。';
+	this.itemTypes.Spear.desc = '攻击距离额外加长，可击中两格之外的敌人。';
+	this.itemTypes.Halberd.desc = '双手武器。攻击距离额外加长，可击中两格之外的敌人。';
 	//this.itemTypes.Staff.desc = 'Has an extra long reach, allowing you to hit enemies two tiles away.';
-	this.itemTypes.GreaterStaffOfFire.desc = 'Damage is improved by increasing fire magic power.';
-	this.itemTypes.GreaterStaffOfPoison.desc = 'Fires projectiles that will poison enemies. Damage is improved by increasing toxic magic power.';
-	this.itemTypes.GreaterStaffOfStorms.desc = 'Damage is improved by increasing storm magic power.';
-	this.itemTypes.GreaterStaffOfIce.desc = 'Fires freezing projectiles that will slow enemies. Power is improved by increasing ice magic power.';
-	this.itemTypes.StormChopper.desc = 'Attacks all adjacent enemies with a powerful shocking attack.';
-	this.itemTypes.InfernoSword.desc = 'Attacks with a powerful flaming attack. Gives a 20% chance to block incoming melee attacks.';	
+	this.itemTypes.GreaterStaffOfFire.desc = '提升火系法力威力可提高其伤害。';
+	this.itemTypes.GreaterStaffOfPoison.desc = '发射使敌人中毒的飞弹。提升毒系法力威力可提高其伤害。';
+	this.itemTypes.GreaterStaffOfStorms.desc = '提升风暴系法力威力可提高其伤害。';
+	this.itemTypes.GreaterStaffOfIce.desc = '发射使敌人减速的冰霜飞弹。提升冰系法力威力可提高其威力。';
+	this.itemTypes.StormChopper.desc = '以强烈的闪电攻击所有相邻的敌人。';
+	this.itemTypes.InfernoSword.desc = '以强烈的烈焰攻击敌人，并有 20% 的几率格挡来袭的近战攻击。';	
 	
-	this.itemTypes.StaffOfFire.desc = 'Damage is improved by increasing fire magic power.';
-	this.itemTypes.StaffOfPoison.desc = 'Fires projectiles that will poison enemies. Damage is improved by increasing toxic magic power.';
-	this.itemTypes.StaffOfStorms.desc = 'Damage is improved by increasing storm magic power.';
-	this.itemTypes.StaffOfIce.desc = 'Fires freezing projectiles that will slow enemies. Power is improved by increasing ice magic power.';
+	this.itemTypes.StaffOfFire.desc = '提升火系法力威力可提高其伤害。';
+	this.itemTypes.StaffOfPoison.desc = '发射使敌人中毒的飞弹。提升毒系法力威力可提高其伤害。';
+	this.itemTypes.StaffOfStorms.desc = '提升风暴系法力威力可提高其伤害。';
+	this.itemTypes.StaffOfIce.desc = '发射使敌人减速的冰霜飞弹。提升冰系法力威力可提高其威力。';
 };
 
 // SET_ITEM_TYPE_DEFAULT_PROPERTIES:

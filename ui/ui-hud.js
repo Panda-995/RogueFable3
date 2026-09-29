@@ -224,9 +224,9 @@ HUD.prototype.refreshDebugText = function () {
 	if (gs.debugProperties.showDebugText) {
 		str = '';
 		str += 'X: ' + gs.pointerTileIndex().x;
-		str += ', Y: ' + gs.pointerTileIndex().y;
-		str += ', T: ' + gs.turn;
-		str += ', FPS: ' + game.time.fps || '--';
+		str += '，Y: ' + gs.pointerTileIndex().y;
+		str += '，T: ' + gs.turn;
+		str += '，FPS: ' + game.time.fps || '--';
 		
 		this.debugText.setText(str);
 	}

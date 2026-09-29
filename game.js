@@ -545,7 +545,7 @@ gs.postStats = function (text) {
 	var xhttp = new XMLHttpRequest();
 	var data = {
 		playerName: gs.globalData.userName,
-		zoneName: gs.capitalSplit(this.zoneName),
+		zoneName: translator.getText(gs.capitalSplit(this.zoneName)),
 		zoneLevel: this.niceZoneLevel(this.zoneName, this.zoneLevel),
 		text: text,
 		playerClass: gs.pc.characterClass,

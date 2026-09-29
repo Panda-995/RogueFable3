@@ -11,7 +11,7 @@ gs.createReligionTypes = function () {
 	// TROG:
 	// Player will always crit when less then half hp
 	this.religionTypes.Trog = {};
-	this.religionTypes.Trog.desc = "You will go berserk and deal automatic critical hits whenever you are less then 1/3 HP.";
+	this.religionTypes.Trog.desc = "当你的生命值低于三分之一时会陷入狂暴，每次攻击必定造成暴击。";
 	this.religionTypes.Trog.effect = function (character) {
 		if (character.currentHp <= character.maxHp / 3) {
 			character.alwaysCrit += 1;
@@ -21,7 +21,7 @@ gs.createReligionTypes = function () {
 	// Wealth:
 	// Player gains tons of gold when joining:
 	this.religionTypes.Wealth = {};
-	this.religionTypes.Wealth.desc = "You will immediately be giften with a hoard of gold coins.";
+	this.religionTypes.Wealth.desc = "你将立刻获得一大批金币。";
 	this.religionTypes.Wealth.onSet = function (character) {
 		gs.getIndexInBox(character.tileIndex.x - 1, character.tileIndex.y - 1, character.tileIndex.x + 2, character.tileIndex.y + 2).forEach(function (index) {
 			if ((gs.isPassable(index) || gs.getChar(index)) && !gs.getItem(index)) {
@@ -33,7 +33,7 @@ gs.createReligionTypes = function () {
 	// ARCHER:
 	// Player is occasionally gifted with projectiles
 	this.religionTypes.TheArcher = {};
-	this.religionTypes.TheArcher.desc = "The Archer will occasionally grant you a gift of projectiles.";
+	this.religionTypes.TheArcher.desc = "游侠之神偶尔会赐予你一批飞弹。";
 	this.religionTypes.TheArcher.onTurn = function (character) {
 		var itemType;
 		
@@ -47,7 +47,7 @@ gs.createReligionTypes = function () {
 	// WIZARD:
 	// Gives the player a chance to save mana on casting
 	this.religionTypes.TheWizard = {};
-	this.religionTypes.TheWizard.desc = "Your abilities will occasionally use no mana.";
+	this.religionTypes.TheWizard.desc = "你的能力偶尔不消耗法力值。";
 	this.religionTypes.TheWizard.effect = function (character) {
 		character.bonusSaveManaChance += 0.05;	
 	};
@@ -55,7 +55,7 @@ gs.createReligionTypes = function () {
 	// HEALTH:
 	// Player is occasionaly healed
 	this.religionTypes.Health = {};
-	this.religionTypes.Health.desc = "You will occasionally be healed when your health is less than 50%.";
+	this.religionTypes.Health.desc = "当你的生命值低于 50% 时，偶尔会自动恢复。";
 	this.religionTypes.Health.onTurn = function (character) {
 		// Every 200 turns
 		if (gs.pc.currentHp < gs.pc.maxHp / 2 && game.rnd.frac() < (1 / 200)) {
@@ -67,7 +67,7 @@ gs.createReligionTypes = function () {
 	// EXPLORATION:
 	// Players health and mana is restored whenever a new level is generated
 	this.religionTypes.Exploration = {};
-	this.religionTypes.Exploration.desc = "If you are below 50% health when descending to a new, unexplored level, you will be healed to full.";
+	this.religionTypes.Exploration.desc = "若你在下降到尚未探索的新层时生命值低于 50%，将被完全治愈。";
 	
 	this.nameTypes(this.religionTypes);
 };

@@ -209,13 +209,13 @@ gs.createObjectTypes = function () {
 	
 	
 	
-	this.objectTypes.HealthFountain.desc = 'Completely restores your hit points.';
-	this.objectTypes.EnergyFountain.desc = 'Completely restores your mana points.';
-	this.objectTypes.LongGrass.desc = 'Ignites and spreads fire.';
-	this.objectTypes.FireShroom.desc = 'Dangerous mushrooms which explode in a burst of fire when stepped on.';
-	this.objectTypes.HealingShroom.desc = 'Pick them to eat later and restore your hit points.';
-	this.objectTypes.EnergyShroom.desc = 'Pick them to eat later and restore your mana points.';
-	this.objectTypes.Vine.desc = 'Unstable Terrain\nPhysical attacks against unstable characters are always criticals.';
+	this.objectTypes.HealthFountain.desc = '完全恢复你的生命值。';
+	this.objectTypes.EnergyFountain.desc = '完全恢复你的法力值。';
+	this.objectTypes.LongGrass.desc = '会被点燃并蔓延火势。';
+	this.objectTypes.FireShroom.desc = '危险的蘑菇，踩上去会爆发出火焰。';
+	this.objectTypes.HealingShroom.desc = '捡起来之后吃掉可以恢复生命值。';
+	this.objectTypes.EnergyShroom.desc = '捡起来之后吃掉可以恢复法力值。';
+	this.objectTypes.Vine.desc = '不稳定地形\n对处于不稳定状态的角色，物理攻击必定造成暴击。';
 };
 
 // REFLECT_OBJECT_FRAME:
@@ -431,7 +431,7 @@ gs.createObjectFuncs = function () {
 		else if (choice === 'RandomSkill') {
 			gs.pc.skillPoints += 1; // gainSkill will -1 skillPoints
 			gs.pc.gainSkill(skillName);
-			gs.pc.popUpText('+1 ' + gs.capitalSplit(skillName) + ' skill', '#ffffff');
+			gs.pc.popUpText('+1 ' + translator.getText(gs.capitalSplit(skillName)) + ' 点技能', '#ffffff');
 		}
 		else if (choice === 'TalentPoint') {
 			gs.pc.talentPoints += 1;
@@ -439,7 +439,7 @@ gs.createObjectFuncs = function () {
 		}
 		else if ( choice === 'RandomTalent') {
 			gs.pc.availableTalents.push(talent.name);
-			gs.pc.popUpText(gs.capitalSplit(talent.name) + ' available', '#ffffff');
+			gs.pc.popUpText(translator.getText(gs.capitalSplit(talent.name)) + ' 点可用', '#ffffff');
 		}
 		
 		// Stop exploration:

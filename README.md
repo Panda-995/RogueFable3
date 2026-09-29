@@ -20,10 +20,23 @@ tooltip 里的显示名大多是英文标识符直接上屏，中文界面大量
 
 | 改动 | 文件 | 说明 |
 | --- | --- | --- |
-| 扩充词库 | `translator.js` | 150 条 → **755 条**，覆盖全部物品 / 怪物 / 场景物件 / 技能 / 天赋 / 状态 / 区域 / 地砖 / 投射物 / 界面文案 |
+| 扩充词库 | `translator.js` | 150 条 → **807 条**，覆盖全部物品 / 怪物 / 场景物件 / 技能 / 天赋 / 状态 / 区域 / 地砖 / 投射物 / 战斗飘字 / 界面文案 |
 | 全局渲染挂钩 | `i18n-render.js`（新增） | 在 `Phaser.Text.prototype.updateText` 上挂钩，一处覆盖所有显示路径 |
-| 中文字体回退 | `constants.js` | `FONT_NAME` 增加微软雅黑 / 苹方 / Noto Sans SC 等回退字体 |
+| 补译描述文本 | `item-type.js` `object-type.js` `religion.js` `status-effect-type.js` `player-ability-type.js` | 物品 / 场景物件 / 信仰 / 状态 / 能力的说明文字（共 70 余条）直接改源码 |
+| 修显示名漏译 | 15 处调用点 | 原代码用 `gs.capitalSplit(name)` 拼显示文本却没走翻译（自动探索「发现」、附魔提示、状态飘字、存档摘要等） |
+| 属性名汉化 | `constants.js` | `NICE_STAT_NAMES` 20 余项 + `FONT_NAME` 中文字体回退栈 |
+| 对话与帮助 | `unique-npc.js` `ui-menu-stack.js` `ui-hud.js` `loader.js` `menu-*.js` | 动物拟声、商人/技能/天赋导师对话、祭坛、胜利、帮助、开场、加载界面 |
 | 语言与标题 | `index.html` | `lang="zh-CN"`、`<title>` 汉化 |
+
+### 为什么不能改 `gs.capitalSplit`
+
+最省事的做法是让 `gs.capitalSplit` 内部直接返回译文，这样所有调用点一次性生效。
+**但这是错的**：`gs.niceZoneLevel()` 会把 `zoneName` 和 `'TheUpperDungeon'`、
+`TIER_II_ZONES`、`TIER_III_ZONES` 做键比较来决定显示第几层。一旦在
+`capitalSplit` 里翻译，关卡层级会算错。
+
+所以本版只在**纯展示**的调用点包一层 `translator.getText()`，
+内部键用途（`game-record.js`、`cloud.js`、`utility.js` 里的 `niceName` 赋值）保持原样。
 
 ### 挂钩原理
 

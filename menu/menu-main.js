@@ -52,10 +52,10 @@ MainMenu.prototype.update = function () {
 	
 	// Set Continue Text:
 	if (gs.playerDataExists() && this.continueGameButton.button.input.checkPointerOver(game.input.activePointer)) {		
-		str = 'level ' + this.saveData.level + ' ';
-		str += gs.capitalSplit(this.saveData.race) + ' ';
-		str += gs.capitalSplit(this.saveData.characterClass) + '\n';
-		str += gs.capitalSplit(this.saveData.zoneName) + ' ';
+		str = '等级 ' + this.saveData.level + '\n';
+		str += translator.getText(gs.capitalSplit(this.saveData.race)) + ' ';
+		str += translator.getText(gs.capitalSplit(this.saveData.characterClass)) + '\n';
+		str += translator.getText(gs.capitalSplit(this.saveData.zoneName)) + ' ';
 		str += gs.niceZoneLevel(this.saveData.zoneName, this.saveData.zoneLevel);
 	}
 	

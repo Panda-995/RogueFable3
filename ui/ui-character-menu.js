@@ -257,7 +257,7 @@ UICharacterMenu.prototype.refreshStats = function () {
 	
 	this.statList.push({name: '职业:',			val: translator.getText(gs.pc.characterClass), tag: 'Class'});
 	this.statList.push({name: '种族:',			val: translator.getText(gs.pc.race.name), tag: 'Race'});
-	this.statList.push({name: '宗教信仰:',			val: (gs.pc.religion ? gs.capitalSplit(gs.pc.religion) : '无'), tag: 'Religion'});
+	this.statList.push({name: '宗教信仰:',			val: (gs.pc.religion ? translator.getText(gs.capitalSplit(gs.pc.religion)) : '无'), tag: 'Religion'});
 	this.statList.push({name: '生命值:',	val: gs.pc.currentHp + '/' + gs.pc.maxHp});
 	this.statList.push({name: '法力值:',	val: gs.pc.currentMp + '/' + gs.pc.maxMp});
 	this.statList.push({name: '饥饿值:',			val: gs.pc.currentFood + '/' + gs.pc.maxFood});

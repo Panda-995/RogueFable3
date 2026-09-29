@@ -1409,7 +1409,7 @@ gs.createPlayerAbilityTypes = function () {
 		gs.createHealingEffect(gs.pc.tileIndex);
 		
 	};
-	this.abilityTypes.Healing.desc = "Completely restores your HP and cures physical effects.";
+	this.abilityTypes.Healing.desc = "完全恢复生命值并解除物理层面的负面效果。";
 	
 	// ENERGY:
 	// ********************************************************************************************
@@ -1428,7 +1428,7 @@ gs.createPlayerAbilityTypes = function () {
 		// Effect:
 		gs.createManaEffect(gs.pc.tileIndex);
 	};
-	this.abilityTypes.Energy.desc = "Completely restores your MP and cures mental effects.";
+	this.abilityTypes.Energy.desc = "完全恢复法力值并解除精神层面的负面效果。";
 	
 	// DOMINATION:
 	// ********************************************************************************************

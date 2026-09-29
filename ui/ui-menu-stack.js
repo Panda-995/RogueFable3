@@ -74,7 +74,7 @@ gs.openLifeSavingMenu = function () {
 	dialog = [{}];
 	dialog[0].text = '你被杀了。你的生命之环闪烁着明亮的光芒，让你复活。';
 	dialog[0].responses = [
-		{text: 'ok', nextLine: 'exit'}
+		{text: '好的', nextLine: 'exit'}
 	];
 	
 	this.dialogMenu.open(dialog);
@@ -95,13 +95,13 @@ gs.openAltarMenu = function () {
 	dialog = [{}];
 	
 	if (gs.pc.religion) {
-		dialog[0].text = 'You pray at the altar of ' + gs.capitalSplit(religionName) + '. You are already worshipping a god!';
-		dialog[0].responses = [{text: 'Ok', nextLine: 'exit'}];
+		dialog[0].text = '你在' + translator.getText(gs.capitalSplit(religionName)) + '的祭坛前祈祷，但你已经信仰其它神明了！';
+		dialog[0].responses = [{text: '好的', nextLine: 'exit'}];
 	}
 	else {
-		dialog[0].text = 'You pray at the altar of ' + gs.capitalSplit(religionName) + ". " + gs.religionTypes[religionName].desc + ' Would you like to join this religion?';
-		dialog[0].responses = [{text: 'Yes', nextLine: 'exit', func: okClicked},
-							   {text: 'No', nextLine: 'exit'}
+		dialog[0].text = '你在' + translator.getText(gs.capitalSplit(religionName)) + '的祭坛前祈祷。\n' + gs.religionTypes[religionName].desc + '\n\n你要皈依这个信仰吗？';
+		dialog[0].responses = [{text: '是', nextLine: 'exit', func: okClicked},
+							   {text: '否', nextLine: 'exit'}
 							  ];
 	}
 	
@@ -141,8 +141,8 @@ gs.openVictoryMenu = function () {
 		gs.startMainMenu();
 	};
 
-	dialog[0].text = 'Your level ' + gs.pc.level + ' ' + gs.pc.characterClass + ' successfully retrieved the Goblet of Yendor in ' + this.timeToString(time) + '.';
-	dialog[0].responses = [{text: '[Done]', nextLine: 'exit', func: okClicked}
+	dialog[0].text = '你的 ' + gs.pc.level + ' 级' + translator.getText(gs.pc.characterClass) + '，在' + this.timeToString(time) + '内成功取得了延多之杯。';
+	dialog[0].responses = [{text: '[结束]', nextLine: 'exit', func: okClicked}
 						  ];
 	gs.createEXPEffect(gs.pc.tileIndex);
 	this.dialogMenu.open(dialog);
@@ -155,11 +155,11 @@ gs.openInstructionMenu = function () {
 	
 
 	
-	dialog[0].text = "Welcome to the Karhakas Mountains. You have been tasked by the Societas Eruditorum to explore these blasted peaks and recover the Codex of Knowledge, the legendary repository of ancient wisdom. The societies scholars believe that the codex is located in a ruined vault to the east of here. Good luck and stay safe!";
-	dialog[0].responses = [{text: 'Warrior', nextLine: 'exit', func: gs.pc.setClass.bind(gs.pc, 'Warrior')},
-						   {text: 'Ranger', nextLine: 'exit', func: gs.pc.setClass.bind(gs.pc, 'Ranger')},
-						   {text: 'Rogue', nextLine: 'exit', func: gs.pc.setClass.bind(gs.pc, 'Rogue')},
-						   {text: 'Psyker', nextLine: 'exit', func: gs.pc.setClass.bind(gs.pc, 'Psyker')}
+	dialog[0].text = "欢迎来到卡尔哈卡斯山脉。知识学会委派你前来探索这片荒芜的群峰，并寻回传说中的智慧宝库 —— 知识法典。\n学会的学者们相信，法典就藏在这以东某座废弃宝库之中。\n祝你好运，平安归来！";
+	dialog[0].responses = [{text: '战士', nextLine: 'exit', func: gs.pc.setClass.bind(gs.pc, 'Warrior')},
+						   {text: '游侠', nextLine: 'exit', func: gs.pc.setClass.bind(gs.pc, 'Ranger')},
+						   {text: '盗贼', nextLine: 'exit', func: gs.pc.setClass.bind(gs.pc, 'Rogue')},
+						   {text: '灵能者', nextLine: 'exit', func: gs.pc.setClass.bind(gs.pc, 'Psyker')}
 						  ];
 	
 	this.dialogMenu.open(dialog);
@@ -240,53 +240,53 @@ gs.openHelpMenu = function () {
 	var dialog = [];
 	
 	dialog[0] = {};
-	dialog[0].text = 'KEYBOARD CONTROLS:' + '\n\n';
-	dialog[0].text += 'NumPad: 8-way move, attack, interact.' + '\n';
-	dialog[0].text += 'NumPad[5]: wait a turn.' + '\n';
-	dialog[0].text += '[A]: Ranged targeting, NumPad[5] to confirm.' + '\n';
-	dialog[0].text += '[W]: Wield previous weapon.' + '\n';
-	dialog[0].text += '[R]: Recast previous spell.' + '\n';
-	dialog[0].text += '[E]: Explore automatically.' + '\n';
-	dialog[0].responses = [{text: 'Keyboard Conrols', nextLine: 0},
-						   {text: 'Mouse Controls', nextLine: 1},
-						   {text: 'General Advice', nextLine: 2},
-						   {text: '[Done]', nextLine: 'exit'}];
+	dialog[0].text = '键盘操作：' + '\n\n';
+	dialog[0].text += '小键盘：八方向移动、攻击、互动。' + '\n';
+	dialog[0].text += '小键盘[5]：等待一回合。' + '\n';
+	dialog[0].text += '[A]：远程定位，小键盘[5]确认。' + '\n';
+	dialog[0].text += '[W]：切换到上一把武器。' + '\n';
+	dialog[0].text += '[R]：重复施放上一个法术。' + '\n';
+	dialog[0].text += '[E]：自动探索。' + '\n';
+	dialog[0].responses = [{text: '键盘操作', nextLine: 0},
+						   {text: '鼠标操作', nextLine: 1},
+						   {text: '通用建议', nextLine: 2},
+						   {text: '[结束]', nextLine: 'exit'}];
 	
 	dialog[1] = {};
-	dialog[1].text = 'MOUSE CONTROLS:' + '\n\n';
-	dialog[1].text += 'Click Tile: move, attack, interact.' + '\n';
-	dialog[1].text += 'Click Self: wait a turn.' + '\n';
-	dialog[1].text += 'Click Mini Map: move to.' + '\n';
-	dialog[1].text += 'Click Inventory: use/equip an item.' + '\n';
+	dialog[1].text = '鼠标操作：' + '\n\n';
+	dialog[1].text += '点击地砖：移动、攻击、互动。' + '\n';
+	dialog[1].text += '点击自己：等待一回合。' + '\n';
+	dialog[1].text += '点击小地图：移动到该处。' + '\n';
+	dialog[1].text += '点击背包：使用/装备物品。' + '\n';
 	dialog[1].responses = dialog[0].responses;
 	
 	dialog[2] = {};
-	dialog[2].text = 'Your spear has a 2 tile range, you should be able to get a free hit on most enemies.';
-	dialog[2].responses = [{text: '[More]', nextLine: 3},
-						   {text: 'Keyboard Conrols', nextLine: 0},
-						   {text: 'Mouse Controls', nextLine: 1},
-						   {text: '[Done]', nextLine: 'exit'}];
+	dialog[2].text = '你的长矛有2格攻击距离，应该可以对大多数敌人进行无伤攻击。';
+	dialog[2].responses = [{text: '[更多]', nextLine: 3},
+						   {text: '键盘操作', nextLine: 0},
+						   {text: '鼠标操作', nextLine: 1},
+						   {text: '[结束]', nextLine: 'exit'}];
 	
 	dialog[3] = {};
-	dialog[3].text = 'Waiting a turn is a good way to get enemies to position themselves optimally. Its often better to find a good position and let them come to you.';
-	dialog[3].responses = [{text: '[More]', nextLine: 4},
-						   {text: 'Keyboard Conrols', nextLine: 0},
-						   {text: 'Mouse Controls', nextLine: 1},
-						   {text: '[Done]', nextLine: 'exit'}];
+	dialog[3].text = '等待一回合是让敌人自己走到最佳位置的好办法。通常更好的做法是先找一个好位置，让敌人来找你。';
+	dialog[3].responses = [{text: '[更多]', nextLine: 4},
+						   {text: '键盘操作', nextLine: 0},
+						   {text: '鼠标操作', nextLine: 1},
+						   {text: '[结束]', nextLine: 'exit'}];
 	
 	dialog[4] = {};
-	dialog[4].text = 'Water, rubble, vines and other surfaces provide an unstable footing. Any character, including yourself who is unstable is automatically critically hit.';
-	dialog[4].responses = [{text: '[More]', nextLine: 5},
-						   {text: 'Keyboard Conrols', nextLine: 0},
-						   {text: 'Mouse Controls', nextLine: 1},
-						   {text: '[Done]', nextLine: 'exit'}];
+	dialog[4].text = '水域、瓦砾、藤蔓等地面会让人站不稳。任何处于不稳定状态的角色（包括你自己）都会被自动暴击。';
+	dialog[4].responses = [{text: '[更多]', nextLine: 5},
+						   {text: '键盘操作', nextLine: 0},
+						   {text: '鼠标操作', nextLine: 1},
+						   {text: '[结束]', nextLine: 'exit'}];
 	
 	dialog[5] = {};
-	dialog[5].text = 'Your healing items are precious. You get full hp upon leveling and also when you find restoration tanks in dungeons. Try to conserve your consumables as much as possible.';
-	dialog[5].responses = [{text: '[More]', nextLine: 6},
-						   {text: 'Keyboard Conrols', nextLine: 0},
-						   {text: 'Mouse Controls', nextLine: 1},
-						   {text: '[Done]', nextLine: 'exit'}];
+	dialog[5].text = '你的治疗物品非常珍贵。升级时以及在地牢中找到恢复池时都会回满生命值。尽量节省你的消耗品。';
+	dialog[5].responses = [{text: '[更多]', nextLine: 6},
+						   {text: '键盘操作', nextLine: 0},
+						   {text: '鼠标操作', nextLine: 1},
+						   {text: '[结束]', nextLine: 'exit'}];
 	
 	this.dialogMenu.open(dialog);
 };

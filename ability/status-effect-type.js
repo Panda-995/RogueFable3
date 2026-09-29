@@ -131,7 +131,7 @@ gs.createStatusEffectTypes = function () {
 	this.statusEffectTypes.NPCCharm = new StatusEffectType();
 	this.statusEffectTypes.NPCCharm.duration = 10;
 	this.statusEffectTypes.NPCCharm.destroyOnZoning = true;
-	this.statusEffectTypes.NPCCharm.desc = 'You are unable to move away from the creature that has charmed you.';
+	this.statusEffectTypes.NPCCharm.desc = '你无法离开魅惑你的那个生物。';
 	this.statusEffectTypes.NPCCharm.dontSave = true;
 	
 	
@@ -193,7 +193,7 @@ gs.createStatusEffectTypes = function () {
 	this.statusEffectTypes.Flammable.noDuration = true;
 	this.statusEffectTypes.Flammable.addDuration = false;
 	this.statusEffectTypes.Flammable.dontPopUpText = true;
-	this.statusEffectTypes.Flammable.desc = 'You will take double damage from all fire attacks.';
+	this.statusEffectTypes.Flammable.desc = '你受到的所有火焰攻击伤害都会翻倍。';
 	
 	// UNSTABLE:
 	// ********************************************************************************************
@@ -215,7 +215,7 @@ gs.createStatusEffectTypes = function () {
 	};
 	this.statusEffectTypes.Immobile.duration = 5;
 	this.statusEffectTypes.Immobile.addDuration = false;
-	this.statusEffectTypes.Immobile.desc = 'You are unable to move ad will be critically hit by all physical attacks.';
+	this.statusEffectTypes.Immobile.desc = '你无法移动，并且所有物理攻击都会对你造成暴击。';
 	
 	// CONSTRICTING:
 	// When a character constricts another character, he adds this status effect to himself to prevent himself from moving
@@ -285,7 +285,7 @@ gs.createStatusEffectTypes = function () {
 	};
 	this.statusEffectTypes.ExperienceBoost.duration = 100;
 	this.statusEffectTypes.ExperienceBoost.addDuration = true;
-	this.statusEffectTypes.ExperienceBoost.desc = 'Doubles the experience you gain from killing enemies.';
+	this.statusEffectTypes.ExperienceBoost.desc = '击杀敌人获得的经验翻倍。';
 	
 	// STUNNED:
 	// ********************************************************************************************
@@ -392,7 +392,7 @@ gs.createStatusEffectTypes = function () {
 	};
 	this.statusEffectTypes.Marked.duration = 10;
 	this.statusEffectTypes.Marked.addDuration = false;
-	this.statusEffectTypes.Marked.desc = 'You have been magically marked causing all creatures to track you.';
+	this.statusEffectTypes.Marked.desc = '你被魔法标记，所有生物都会追踪你。';
 	
 
 	// SNEAK:

@@ -40,7 +40,7 @@ function UIEnchantmentMenu() {
 UIEnchantmentMenu.prototype.slotClicked = function (slot) {
 	
 	slot.item.enchant();
-	gs.pc.popUpText('Enchanted ' + gs.capitalSplit(slot.item.type.name), '#ffffff');
+	gs.pc.popUpText('已附魔：' + translator.getText(gs.capitalSplit(slot.item.type.name)), '#ffffff');
 	gs.createParticlePoof(gs.pc.tileIndex, 'YELLOW');
 	gs.playSound(gs.sounds.cure, gs.pc.tileIndex);
 	

@@ -1067,13 +1067,13 @@ PlayerCharacter.prototype.clickAbility = function (abilityIndex) {
 	if (this.selectedAbility.isOn) {
 		this.selectedAbility.isOn = false;
 		this.updateStats();
-		this.popUpText(gs.capitalSplit(this.selectedAbility.type.name) + ' off', '#ffffff');
+		this.popUpText(translator.getText(gs.capitalSplit(this.selectedAbility.type.name)) + ' 关', '#ffffff');
 		this.endTurn(100);
 	}
 	// Turn on sustained ability:
 	else if (this.selectedAbility.type.isSustained) {
 		this.selectedAbility.isOn = true;
-		this.popUpText(gs.capitalSplit(this.selectedAbility.type.name) + ' on', '#ffffff');
+		this.popUpText(translator.getText(gs.capitalSplit(this.selectedAbility.type.name)) + ' 开', '#ffffff');
 		this.updateStats();
 		this.endTurn(100);
 	}
@@ -1089,7 +1089,7 @@ PlayerCharacter.prototype.clickAbility = function (abilityIndex) {
 		gs.playSound(gs.sounds.spell, gs.pc.tileIndex);
 
 		// Popup Text:
-		this.popUpText(gs.capitalSplit(this.selectedAbility.type.name), '#ffffff');
+		this.popUpText(translator.getText(gs.capitalSplit(this.selectedAbility.type.name)), '#ffffff');
 
 		// Particle Generator:
 		if (this.particleGenerator) {
@@ -1298,7 +1298,7 @@ PlayerCharacter.prototype.weaponSlotClicked = function (slot) {
 			gs.characterMenu.refresh();
 		}
 		else {
-			this.popUpText(gs.capitalSplit(this.inventory.getWeapon().type.name), '#ffffff');
+			this.popUpText(translator.getText(gs.capitalSplit(this.inventory.getWeapon().type.name)), '#ffffff');
 		}
 	}
 };
@@ -1387,7 +1387,7 @@ PlayerCharacter.prototype.consumableSlotClicked = function (slot) {
 		gs.playSound(gs.sounds.spell, gs.pc.tileIndex);
 		
 		// Popup Text:
-		this.popUpText(gs.capitalSplit(this.selectedAbility.type.name), '#ffffff');
+		this.popUpText(translator.getText(gs.capitalSplit(this.selectedAbility.type.name)), '#ffffff');
 
 
 		// Particle Generator:
@@ -2006,7 +2006,7 @@ PlayerCharacter.prototype.getActiveSummonList = function () {
 PlayerCharacter.prototype.corrodeWeapon = function () {
 	if (this.inventory.getWeapon().type.name !== 'Fists' && this.inventory.getWeapon().type.name !== 'Staff' && this.inventory.getWeapon().mod > 0) {
 		this.inventory.getWeapon().mod -= 1;
-		this.queuePopUpText('Corroded ' + gs.capitalSplit(this.inventory.getWeapon().type.name), '#ffffff');
+		this.queuePopUpText('腐蚀了 ' + translator.getText(gs.capitalSplit(this.inventory.getWeapon().type.name)), '#ffffff');
 	}
 };
 

@@ -156,7 +156,7 @@ loader.fileComplete = function (progress, cacheKey, success, totalLoaded, totalF
 // ************************************************************************************************
 loader.loadComplete = function () {
 	var darkTileset, darkMapTileset;
-	this.text.setText("Load Complete");
+	this.text.setText("加载完成");
 	
 	// Dark Tileset:
 	gs.darkTileset = game.add.bitmapData(game.cache.getImage('Tileset').width, game.cache.getImage('Tileset').height);

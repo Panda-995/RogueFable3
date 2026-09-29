@@ -346,11 +346,11 @@ gs.setTileIndexExplored = function (tileIndex) {
 			// Halting exploration if something interesting is discovered:
 			if (this.getObj(tileIndex, objList)) {
 				gs.pc.stopExploring();
-				gs.pc.popUpText('Spotted ' + gs.capitalSplit(this.getObj(tileIndex).type.name), '#ffffff');
+				gs.pc.popUpText('发现 ' + translator.getText(gs.capitalSplit(this.getObj(tileIndex).type.name)) + '!', '#ffffff');
 			} 
 			else if (this.getChar(tileIndex) && this.inArray(this.getChar(tileIndex).name, charList)) {
 				gs.pc.stopExploring();
-				gs.pc.popUpText('Spotted ' + gs.capitalSplit(this.getChar(tileIndex).type.name), '#ffffff');
+				gs.pc.popUpText('发现 ' + translator.getText(gs.capitalSplit(this.getChar(tileIndex).type.name)) + '!', '#ffffff');
 			}	
 		}
 		

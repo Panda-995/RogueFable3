@@ -108,7 +108,7 @@ StatusEffects.prototype.add = function (typeName, properties, flags = {}) {
 		
 		// Pop Up Text:
 		if (gs.getTile(this.character.tileIndex).visible && !newStatusEffect.dontPopUpText && !flags.dontPopUpText) {
-			this.character.queuePopUpText(gs.capitalSplit(newStatusEffect.name), '#ffffff'); 
+			this.character.queuePopUpText(translator.getText(gs.capitalSplit(newStatusEffect.name)), '#ffffff'); 
 		}
 	}
 	

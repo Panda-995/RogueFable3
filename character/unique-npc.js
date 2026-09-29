@@ -14,8 +14,8 @@ gs.createUniqueNPCTypes = function () {
 
 	// DEFAULT:
 	this.dialog.Default = [
-		{text: 'No Dialog',
-		 responses: [{text: '[Done]', nextLine: 'exit'}]
+		{text: '（没有对话）',
+		 responses: [{text: '[结束]', nextLine: 'exit'}]
 		}
 	];
 
@@ -23,8 +23,8 @@ gs.createUniqueNPCTypes = function () {
 	this.dialog.Merchant = [
 		{text: "你好，勇敢的冒险家，欢迎来到我的小店!\n看看你对哪些产品感兴趣。",
 		 responses: [
-			 {text: "[View Items]", nextLine: 'barter'},
-			 {text: "[Done]", nextLine: 'exit'}
+			 {text: "[查看商品]", nextLine: 'barter'},
+			 {text: "[结束]", nextLine: 'exit'}
 		 ]
 		}
 	];
@@ -94,29 +94,29 @@ gs.createUniqueNPCTypes = function () {
 	];
 
     //Cow:	
-    this.dialog.Cow = [{text: 'Moo',
-									 responses: [{text: 'Okay', nextLine: 'exit'},
+    this.dialog.Cow = [{text: '哞',
+									 responses: [{text: '好的', nextLine: 'exit'},
 												]
 									}
 								   ];
         
     //Chicken:	
-    this.dialog.Chicken = [{text: 'Cluck Cluck',
-									 responses: [{text: 'Okay', nextLine: 'exit'},
+    this.dialog.Chicken = [{text: '咯咯',
+									 responses: [{text: '好的', nextLine: 'exit'},
 												]
 									}
 								   ];
     
     //Pig:	
-    this.dialog.Pig = [{text: 'Oink Oink',
-									 responses: [{text: 'Okay', nextLine: 'exit'},
+    this.dialog.Pig = [{text: '哼哼',
+									 responses: [{text: '好的', nextLine: 'exit'},
 												]
 									}
 								   ];
     
     //Sheep:	
-    this.dialog.Sheep = [{text: 'Baa',
-									 responses: [{text: 'Okay', nextLine: 'exit'},
+    this.dialog.Sheep = [{text: '咩',
+									 responses: [{text: '好的', nextLine: 'exit'},
 												]
 									}
 								   ];

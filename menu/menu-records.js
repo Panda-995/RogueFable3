@@ -120,7 +120,7 @@ UIRecordMenu.prototype.refresh = function () {
 	if (this.selectedClass === 'All') {
 		let obj = gs.fastestWinTime();
 		if (obj) {
-			str += 'Fastest Win Time: ' + gs.timeToString(obj.time) + ' - ' + gs.capitalSplit(obj.className) + '\n';
+			str += '最快通关时间: ' + gs.timeToString(obj.time) + ' - ' + translator.getText(gs.capitalSplit(obj.className)) + '\n';
 		}
 		
 	}

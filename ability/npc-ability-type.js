@@ -501,7 +501,7 @@ gs.createNPCAbilityTypes = function () {
 		damage = this.attributes.damage.value(character);
 		
 		// Caster:
-		character.popUpText(gs.capitalSplit(this.name), '#ffffff');
+		character.popUpText(translator.getText(gs.capitalSplit(this.name)), '#ffffff');
 		gs.createParticlePoof(character.tileIndex, this.particleColor);
 		
 		// Targets:
