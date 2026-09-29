@@ -1,12 +1,20 @@
+# 构建产物与工具链，不需要进镜像
 .git
 .github
 .gitignore
+.gitattributes
 .vscode
 tools
 docs
 node_modules
-*.md
-!README.md
+README.md
+docker-compose.yml
+
+# 这些文件只是构建/部署用的，不该被 nginx 当静态资源公开
+Dockerfile
+.dockerignore
+docker
+
+# macOS / Windows 噪音
 .DS_Store
 Thumbs.db
-docker-compose.yml

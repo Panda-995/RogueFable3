@@ -1,0 +1,37 @@
+# RogueFable3 《盗贼寓言 III》中文版 —— Docker Compose
+#
+#   docker compose up -d
+#   浏览器打开 http://localhost:8080
+#
+# 镜像同时提供 linux/amd64 与 linux/arm64，x86 / ARM 设备通用。
+
+services:
+  roguefable3:
+    image: ghcr.io/panda-995/roguefable3:latest
+    container_name: roguefable3
+    restart: unless-stopped
+
+    ports:
+      # 左侧是宿主机端口，改成 "80:80" 可直接占用 80 端口
+      - "8080:80"
+
+    environment:
+      # 纯静态站点，无需环境变量；此处仅为占位说明
+      TZ: Asia/Shanghai
+
+    # nginx 自带 HEALTHCHECK，这里做一次覆盖，设置更合理的检查间隔
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1/index.html"]
+      interval: 30s
+      timeout: 5s
+      start_period: 5s
+      retries: 3
+
+    # 纯静态站点不写盘，保持容器无状态
+    read_only: false
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
